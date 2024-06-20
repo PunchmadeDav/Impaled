@@ -1,6 +1,5 @@
 package org.ladysnake.impaled.common.entity;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particle.ParticleTypes;
@@ -14,11 +13,10 @@ public abstract class FireTridentEntity extends ImpaledTridentEntity {
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
-        Entity entity = entityHitResult.getEntity();
-        if (entity instanceof LivingEntity livingEntity && livingEntity.getType() != EntityType.ENDERMAN) {
+        if (entityHitResult.getEntity() instanceof LivingEntity livingEntity && livingEntity.getType() != EntityType.ENDERMAN) {
             setTargetOnFireFor(livingEntity, 1);
-            super.onEntityHit(entityHitResult);
         }
+        super.onEntityHit(entityHitResult);
     }
 
     @Override
