@@ -10,12 +10,6 @@ public class HellforkEntity extends FireTridentEntity {
     }
 
     @Override
-    protected void onHit(LivingEntity target) {
-        super.onHit(target);
-        target.setOnFireFor(8);
-    }
-
-    @Override
     protected void setTargetOnFireFor(LivingEntity target, int seconds) {
         target.setOnFireFor(seconds);
     }
